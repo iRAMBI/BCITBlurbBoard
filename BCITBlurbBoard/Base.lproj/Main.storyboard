@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lED-Ke-3UK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="luN-i7-Mjk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8Z-qN-VpM">
