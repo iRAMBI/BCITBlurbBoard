@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,6 +19,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func LoginUser(sender: UIButton) {
+        println( "User logging in!" )
+    }
 
 }
 
