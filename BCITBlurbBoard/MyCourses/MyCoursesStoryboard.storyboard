@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--My Courses Controller-->
+        <scene sceneID="AHS-id-gHu">
+            <objects>
+                <viewController storyboardIdentifier="mycourses" id="UOI-II-l8F" customClass="MyCoursesController" customModule="BCITBlurbBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="udn-cf-DFY"/>
+                        <viewControllerLayoutGuide type="bottom" id="3uS-qW-dTX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gjd-Ji-9GY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFb-S6-zKm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="7vr-9G-6Ef"/>
+                                </constraints>
+                                <state key="normal" title="Filtered News">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7vr-9G-6Ef"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7vr-9G-6Ef"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="sV1-uY-wQH" kind="show" id="8K7-zx-WOg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKg-cB-RGM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="70b-xw-feJ"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="70b-xw-feJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="70b-xw-feJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnBackPressed:" destination="UOI-II-l8F" eventType="touchUpInside" id="BLZ-fQ-fBj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fKg-cB-RGM" firstAttribute="top" secondItem="udn-cf-DFY" secondAttribute="bottom" constant="259" id="8Rd-84-mM6"/>
+                            <constraint firstItem="qFb-S6-zKm" firstAttribute="centerX" secondItem="Gjd-Ji-9GY" secondAttribute="centerX" id="DJq-lC-geQ"/>
+                            <constraint firstItem="fKg-cB-RGM" firstAttribute="centerX" secondItem="qFb-S6-zKm" secondAttribute="centerX" id="SJh-QC-uh4"/>
+                            <constraint firstItem="3uS-qW-dTX" firstAttribute="top" secondItem="qFb-S6-zKm" secondAttribute="bottom" constant="95" id="b4H-EO-sqZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qFb-S6-zKm"/>
+                                <exclude reference="fKg-cB-RGM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8Rd-84-mM6"/>
+                                <exclude reference="SJh-QC-uh4"/>
+                                <exclude reference="DJq-lC-geQ"/>
+                                <exclude reference="b4H-EO-sqZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qFb-S6-zKm"/>
+                                <include reference="fKg-cB-RGM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8Rd-84-mM6"/>
+                                <include reference="SJh-QC-uh4"/>
+                                <include reference="DJq-lC-geQ"/>
+                                <include reference="b4H-EO-sqZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWT-eA-1o7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124.5" y="486"/>
+        </scene>
+        <!--Filtered News Controller-->
+        <scene sceneID="10v-W9-f2a">
+            <objects>
+                <viewController id="sV1-uY-wQH" customClass="FilteredNewsController" customModule="BCITBlurbBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tji-DU-Zjo"/>
+                        <viewControllerLayoutGuide type="bottom" id="pkf-zE-nxU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tNA-T4-3El">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN8-it-EB5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="172" y="74" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnBackPressed:" destination="sV1-uY-wQH" eventType="touchUpInside" id="Du8-C0-vRu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EN8-it-EB5"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EN8-it-EB5"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBf-8B-82j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751.5" y="482"/>
+        </scene>
+    </scenes>
+</document>
