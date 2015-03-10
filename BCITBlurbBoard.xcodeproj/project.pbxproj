@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1095D7791AA2759B009F19F2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095D7781AA2759B009F19F2 /* SwiftyJSON.swift */; };
+		10FE07031AAE970B00AF827E /* GlobalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE07021AAE970B00AF827E /* GlobalAppData.swift */; };
 		10FE8BC01A5E13E900F8CCDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE8BBF1A5E13E900F8CCDB /* AppDelegate.swift */; };
 		10FE8BC31A5E13E900F8CCDB /* BCITBlurbBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10FE8BC11A5E13E900F8CCDB /* BCITBlurbBoard.xcdatamodeld */; };
 		10FE8BC81A5E13E900F8CCDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FE8BC61A5E13E900F8CCDB /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		104F98B51A5E203200E3DE17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1095D7781AA2759B009F19F2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		10FE07021AAE970B00AF827E /* GlobalAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalAppData.swift; path = Common/GlobalAppData.swift; sourceTree = "<group>"; };
 		10FE8BBA1A5E13E900F8CCDB /* BCITBlurbBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCITBlurbBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FE8BBE1A5E13E900F8CCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10FE8BBF1A5E13E900F8CCDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			children = (
 				C9513A7F1A8BCF7A00D5C1F8 /* HTTPClient.swift */,
 				E73DFB331A7F3F7700B8041D /* Protocols */,
+				1095D7781AA2759B009F19F2 /* SwiftyJSON.swift */,
+				10FE07021AAE970B00AF827E /* GlobalAppData.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				E72E366C1A832CC300CCBE1D /* NewArticleController.swift in Sources */,
 				E72E366F1A832F9700CCBE1D /* SingleArticleController.swift in Sources */,
 				10FE8BC01A5E13E900F8CCDB /* AppDelegate.swift in Sources */,
+				10FE07031AAE970B00AF827E /* GlobalAppData.swift in Sources */,
 				E72E36761A83305A00CCBE1D /* MyCoursesController.swift in Sources */,
 				E72E36601A83258600CCBE1D /* LoginController.swift in Sources */,
 				E73DFB441A7F4AB300B8041D /* UserProtocol.swift in Sources */,
@@ -441,6 +448,7 @@
 				E7924B591A7F5ACE00A8C5B3 /* ParserProtocol.swift in Sources */,
 				E72E36781A83311D00CCBE1D /* FilteredNewsController.swift in Sources */,
 				E72E366A1A832B9700CCBE1D /* ContactsController.swift in Sources */,
+				1095D7791AA2759B009F19F2 /* SwiftyJSON.swift in Sources */,
 				E72E36631A83268C00CCBE1D /* NewsfeedController.swift in Sources */,
 				E73DFB3D1A7F470D00B8041D /* NewsProtocol.swift in Sources */,
 			);
