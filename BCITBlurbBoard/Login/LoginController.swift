@@ -29,10 +29,10 @@ class LoginController: UIViewController {
         //TODO : Add actual verification for user auth  
         
         // test the login route!
-        /*
-        var loginInfo = ["username":"bsoer@my.bcit.ca", "password":"password"]
+        
+        var loginInfo = ["email":"bsoer@my.bcit.ca", "password":"password"]
         httpClient.TestPost("http://api.thunderchicken.ca:8080/api/auth", data : loginInfo);
-        */
+        
         
         // test newsfeed route
         var getResult : NSDictionary? = httpClient.Get("http://api.thunderchicken.ca:8080/api/newsfeed/A00843110/standard/QLTw7tisv8O7ipX6B7Tdxnzv6")

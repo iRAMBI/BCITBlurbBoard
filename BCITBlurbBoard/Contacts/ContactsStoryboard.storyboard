@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Contacts Controller-->
+        <!--Title-->
         <scene sceneID="RDV-mi-b6b">
             <objects>
                 <viewController storyboardIdentifier="contacts" id="mNN-dT-t8q" customClass="ContactsController" customModule="BCITBlurbBoard" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,32 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cmo-p5-mlu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="65" width="400" height="369"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="mNN-dT-t8q" id="LRY-Wy-GEn"/>
-                                    <outlet property="delegate" destination="mNN-dT-t8q" id="W7m-ps-n7H"/>
-                                </connections>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-Ke-2Gh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Contacts" id="N9E-na-LQo">
-                                        <barButtonItem key="leftBarButtonItem" id="EMb-PP-Vqd">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DaL-bC-fiV">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnBackPressed:" destination="mNN-dT-t8q" eventType="touchUpInside" id="Urk-EB-nmb"/>
-                                                </connections>
-                                            </button>
+                                        <barButtonItem key="rightBarButtonItem" title="Back" id="Svw-EH-0BL">
+                                            <connections>
+                                                <action selector="btnBack:" destination="mNN-dT-t8q" id="oTA-3W-TqL"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -55,7 +37,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="cmo-p5-mlu"/>
                                 <exclude reference="vt1-Ke-2Gh"/>
                             </mask>
                             <mask key="constraints">
@@ -74,20 +55,12 @@
                                 <include reference="x57-bz-8qg"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="cmo-p5-mlu"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="cmo-p5-mlu" id="gbd-nf-0qJ"/>
-                        <outlet property="tableview" destination="cmo-p5-mlu" id="4Tv-Dq-RnW"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Title" id="sYI-TU-ope"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJD-Wb-9tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="378"/>
+            <point key="canvasLocation" x="249" y="346.5"/>
         </scene>
     </scenes>
 </document>
