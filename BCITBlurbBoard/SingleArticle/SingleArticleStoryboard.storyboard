@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Single Article Controller-->
+        <scene sceneID="Zsn-Up-HRW">
+            <objects>
+                <viewController storyboardIdentifier="singlearticle" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xYj-Vc-Tgr" customClass="SingleArticleController" customModule="BCITBlurbBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nX1-3s-1Jg"/>
+                        <viewControllerLayoutGuide type="bottom" id="sWs-Dt-wre"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c5P-eJ-QSc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZo-TM-hQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="433"/>
+        </scene>
+    </scenes>
+</document>
