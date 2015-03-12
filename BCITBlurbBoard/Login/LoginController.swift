@@ -12,6 +12,8 @@ import AlamoFire
 class LoginController: UIViewController {
     let httpClient = HTTPClient.self;
     
+   
+    @IBOutlet var criticalnewslabel: UILabel!
     @IBOutlet var password: UITextField!
     @IBOutlet var username: UITextField! //is actualy the email input
     @IBOutlet var error: UILabel!
@@ -25,6 +27,7 @@ class LoginController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         error.adjustsFontSizeToFitWidth = true;
         errorMessage.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: NSMakeRange(0, errorMessage.length));
+        self.getCriticalNews();
         
         
     }
@@ -44,6 +47,42 @@ class LoginController: UIViewController {
         username.resignFirstResponder();
         password.resignFirstResponder();
     }
+    
+    private func getCriticalNews(){
+        println("Login - Calling Critical News");
+        let route = baseUrl + "/newsfeed/critical";
+        
+        
+        Alamofire.request(.GET, route)
+            .responseJSON{ (_, _, data, _) in
+                println("Login - Critical News Recieved");
+                let json = JSON(data!);
+                let count = json["data"]["criticalnews"].array?.count;
+                
+                if(count > 0){
+                    var newsText:String = "**Important**\n";
+                    for(var i = 0; i < count; i++){
+                        if let title = json["data"]["criticalnews"][i]["title"].string {
+                            newsText += title + "\n";
+                        }
+                    }
+                    self.criticalnewslabel.text = newsText;
+                    self.fadeInBanner();
+
+                }
+                
+                
+                
+                
+            }
+        
+    }
+    
+    private func fadeInBanner(){
+        UIView.animateWithDuration(1.5, animations: {
+            self.criticalnewslabel.alpha = 1;
+        });
+    }
 
     /// goes through the process of validating the users login information and then makes the call
     /// to the server to validate the user and fetch its token. On success the function calls the
@@ -53,7 +92,7 @@ class LoginController: UIViewController {
         //clear any error content that may exist
         error.text = "";
         
-        println( "User logging in!" )
+        println( "Login - User logging in!" )
         loader.startAnimating();
         
         //client side validation
@@ -84,7 +123,7 @@ class LoginController: UIViewController {
         Alamofire.request(.POST, route, parameters: loginInfo, encoding: .JSON)
             .responseJSON{ (_, _, data, _) in
                 
-                println("Response Arrived!");
+                println("Login - Response Arrived!");
                 self.loader.stopAnimating();
             
                 //parse with SwiftlyJSON (located in /Common)
@@ -125,9 +164,20 @@ class LoginController: UIViewController {
         if let userType = json["data"]["type"].string {
             appData.setUserType(userType);
         }
+        
+        //and user id
+        if let userid = json["data"]["userid"].string{
+            appData.setUserId(userid);
+        }
+        
+        //and username
+        if let username = json["data"]["name"].string{
+            appData.setUserName(username);
+        }
+        
         //send device token back to server
         if(!sentDeviceToken()){
-            println("Failed to send device token. Some functionality may not work. Re-login to try again");
+            println("Login - Failed to send device token. Some functionality may not work. Re-login to try again");
         }
         
         //send to newsfeed page

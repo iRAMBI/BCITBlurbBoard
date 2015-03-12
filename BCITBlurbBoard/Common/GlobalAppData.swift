@@ -54,4 +54,20 @@ public class GlobalAppData{
     public func setUserType(usertype:String){
         self.usertype = usertype;
     }
+    
+    public func setUserId(userid:String){
+        self.userid = userid;
+    }
+    
+    public func getUserId()->String?{
+        return self.userid;
+    }
+    
+    public func setUserName(username:String){
+        self.username = username;
+    }
+    
+    public func getUserName()->String?{
+        return self.username;
+    }
 }
