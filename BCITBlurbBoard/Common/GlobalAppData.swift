@@ -16,7 +16,9 @@ public class GlobalAppData{
     
     private var token:String?;
     private var usertype:String?;
-     private var userid:String?;
+    private var userid:String?;
+    private var username:String?;
+    
     private init(){};
     
     /// Gets the shared instance of the global app data
