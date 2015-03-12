@@ -16,13 +16,17 @@ public class GlobalAppData{
     
     private var token:String?;
     private var usertype:String?;
-    
+     private var userid:String?;
     private init(){};
     
     /// Gets the shared instance of the global app data
     /// :return: The instance of the singleton object
     public class func getGlobalAppData() ->GlobalAppData {
         return instance;
+    }
+    
+    public func getUserId()->String?{
+        return self.userid;
     }
     
     /// Gets the user token

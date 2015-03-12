@@ -8,32 +8,54 @@
 
 
 import UIKit
+import Alamofire
+
 
 
 class ContactsController: UIViewController , UITableViewDataSource, UITableViewDelegate {
+    let appData = GlobalAppData.getGlobalAppData();
+    
+    let baseUrl:String = "http://api.thunderchicken.ca/api";
+    
+   // let route = baseUrl + "/contacts/userid/token";
 
     @IBAction func btnBack(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil);
     }
-    let cellIdentifier = "cell";
-    let animal = ["cat","dog"];
-    var tableData:Array< String > = Array < String >()
+        var tableData: [JSON] = []
+    
     var tableViewController = UITableViewController (style: .Plain)
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-         get_data_from_url("http://www.ikhangura.com/service.php")
-        tableData = animal
+        let token:String! = appData.getUserToken();
+        let userId:String! = appData.getUserId()
+        
         // Do any additional setup after loading the view, typically from a nib.
         var tableView = tableViewController.tableView;
        tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
        self.view.addSubview(tableView)
+       // tableView.reloadData();
+        Alamofire.request(.GET,"http://api.thunderchicken.ca/api/contacts/userId/" + token)
+            .responseJSON { (_,_, json, _) in
+               
+                // comment above line and uncomment following for testing
+       // Alamofire.request(.GET, "http://api.thunderchicken.ca/api/contacts/A00843110/" + token).responseJSON { (request, response, json, error) in
+            println(json)
+            if json != nil {
+                var jsonObj = JSON(json!)
+                
+                if let data = jsonObj["data"]["contacts"].arrayValue as [JSON]?{
+                   
+                    self.tableData = data
+                     tableView.reloadData();
+                    
+                }
+            }
+        }
         
-        // "/api/contacts/:bsoer@my.bcit/:XAkyHqdz3Sw7qNTdfXKIS3ecn8X"
-        
-       
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,67 +68,12 @@ class ContactsController: UIViewController , UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        cell.textLabel?.text = self.tableData[indexPath.row]
+        let data = self.tableData[indexPath.row]
+        cell.textLabel?.text = data["name"].string
         
         return cell
     }
    
     
-    func get_data_from_url(url:String)
-    {
-        let httpMethod = "GET"
-        let timeout = 15
-        let url = NSURL(string: url)
-        let urlRequest = NSMutableURLRequest(URL: url!,
-            cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData,
-            timeoutInterval: 15.0)
-        let queue = NSOperationQueue()
-        NSURLConnection.sendAsynchronousRequest(
-            urlRequest,
-            queue: queue,
-            completionHandler: {(response: NSURLResponse!,
-                data: NSData!,
-                error: NSError!) in
-                if data.length > 0 && error == nil{
-                    let json = NSString(data: data, encoding: NSASCIIStringEncoding)
-                    self.extract_json(json!)
-                }else if data.length == 0 && error == nil{
-                    println("Nothing was downloaded")
-                } else if error != nil{
-                    println("Error happened = \(error)")
-                }
-            }
-        )
-    }
     
-    func extract_json(data:NSString)
-    {
-        var parseError: NSError?
-        let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
-        let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &parseError)
-        if (parseError == nil)
-        {
-            if let info_list = json as? NSArray
-            {
-                for (var i = 0; i < info_list.count ; i++ )
-                {
-                    if let info_obj = info_list[i] as? NSDictionary
-                    {
-                        if let info_name = info_obj["facultyid"] as? String
-                        {
-                            if let info_code = info_obj["userid"] as? String
-                            {
-                                tableData.append(info_name + " [" + info_code + "]")
-                            }
-                        }
-                    }
-                }
-            }
-        }
-       
-    
-    }
-
 }
-
- 

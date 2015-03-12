@@ -10,6 +10,7 @@ import UIKit
 import AlamoFire
 
 class LoginController: UIViewController {
+    let httpClient = HTTPClient.self;
     
     @IBOutlet var password: UITextField!
     @IBOutlet var username: UITextField! //is actualy the email input
@@ -65,16 +66,19 @@ class LoginController: UIViewController {
         let validEmail = username.text!;
         let validPassword = password.text!;
         
+        // test the login route!
+         var loginInfo:[String:AnyObject] = ["email":validEmail, "password": validPassword];
+       
+      // var loginInfo = ["email":"bsoer@my.bcit.ca", "password":"password"]
+      // httpClient.TestPost("http://api.thunderchicken.ca:8080/api/auth", data : loginInfo);
         
         //server call
-        var loginInfo:[String:AnyObject] = ["email":validEmail, "password": validPassword];
+      
         let route = baseUrl + "/auth";
 
         
-        // test the login route!
-        
-        var loginInfo = ["email":"bsoer@my.bcit.ca", "password":"password"]
-        httpClient.TestPost("http://api.thunderchicken.ca:8080/api/auth", data : loginInfo);
+        // test newsfeed route
+       // var getResult : NSDictionary? = httpClient.Get("http://api.thunderchicken.ca:8080/api/newsfeed/A00843110/standard/QLTw7tisv8O7ipX6B7Tdxnzv6")
         
         
         Alamofire.request(.POST, route, parameters: loginInfo, encoding: .JSON)
