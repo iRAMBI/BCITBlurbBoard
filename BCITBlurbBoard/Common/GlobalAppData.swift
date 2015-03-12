@@ -27,6 +27,10 @@ public class GlobalAppData{
         return instance;
     }
     
+    public func getUserId()->String?{
+        return self.userid;
+    }
+    
     /// Gets the user token
     /// :return: String? the user's token that has been set. Will return nil
     /// if a usertype has not been set
