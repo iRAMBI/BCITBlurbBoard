@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopDateViewController" customModule="BCITBlurbBoard" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="ad2-Nz-3bW" id="4AX-X1-tEf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fxj-Tk-Vgv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7E-bo-2vn">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-Nz-3bW">
+                            <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="KHP-Cx-mNW"/>
+                            </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="448387182.712641">
+                                <!--2015-03-18 15:59:42 +0000-->
+                            </date>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="KHP-Cx-mNW"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="KHP-Cx-mNW"/>
+                                </mask>
+                            </variation>
+                        </datePicker>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-r1-u4l">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal" title="None">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="noneAction:" destination="-1" eventType="touchUpInside" id="Lkq-u0-Ea8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipQ-dg-AvU">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal" title="OK">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="okAction:" destination="-1" eventType="touchUpInside" id="Dfd-9H-reT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ad2-Nz-3bW" secondAttribute="trailing" constant="20" symbolic="YES" id="FE2-ZU-Yid">
+                            <variation key="widthClass=compact" constant="0.0"/>
+                        </constraint>
+                        <constraint firstItem="ad2-Nz-3bW" firstAttribute="leading" secondItem="y7E-bo-2vn" secondAttribute="leading" constant="20" symbolic="YES" id="FSs-tc-BLo">
+                            <variation key="widthClass=compact" constant="0.0"/>
+                        </constraint>
+                        <constraint firstAttribute="centerX" secondItem="ipQ-dg-AvU" secondAttribute="centerX" id="Pva-54-PJP"/>
+                        <constraint firstItem="TP1-r1-u4l" firstAttribute="leading" secondItem="y7E-bo-2vn" secondAttribute="leading" constant="8" id="S6d-fd-aCo"/>
+                        <constraint firstItem="ad2-Nz-3bW" firstAttribute="top" secondItem="y7E-bo-2vn" secondAttribute="top" constant="20" symbolic="YES" id="dHp-67-cF3">
+                            <variation key="widthClass=compact" constant="0.0"/>
+                        </constraint>
+                        <constraint firstItem="TP1-r1-u4l" firstAttribute="top" secondItem="ad2-Nz-3bW" secondAttribute="bottom" constant="8" id="fzO-Ri-22e"/>
+                        <constraint firstItem="ipQ-dg-AvU" firstAttribute="top" secondItem="ad2-Nz-3bW" secondAttribute="bottom" constant="7" id="hHO-jW-T10">
+                            <variation key="widthClass=compact" constant="8"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="200" id="yh2-Pv-oza"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="ad2-Nz-3bW"/>
+                            <exclude reference="TP1-r1-u4l"/>
+                            <exclude reference="ipQ-dg-AvU"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="yh2-Pv-oza"/>
+                            <exclude reference="FE2-ZU-Yid"/>
+                            <exclude reference="FSs-tc-BLo"/>
+                            <exclude reference="dHp-67-cF3"/>
+                            <exclude reference="S6d-fd-aCo"/>
+                            <exclude reference="fzO-Ri-22e"/>
+                            <exclude reference="Pva-54-PJP"/>
+                            <exclude reference="hHO-jW-T10"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="ad2-Nz-3bW"/>
+                            <include reference="TP1-r1-u4l"/>
+                            <include reference="ipQ-dg-AvU"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="yh2-Pv-oza"/>
+                            <include reference="FE2-ZU-Yid"/>
+                            <include reference="FSs-tc-BLo"/>
+                            <include reference="dHp-67-cF3"/>
+                            <include reference="S6d-fd-aCo"/>
+                            <include reference="fzO-Ri-22e"/>
+                            <include reference="Pva-54-PJP"/>
+                            <include reference="hHO-jW-T10"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="y7E-bo-2vn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CXv-Kh-tUA"/>
+                <constraint firstAttribute="trailing" secondItem="y7E-bo-2vn" secondAttribute="trailing" constant="20" symbolic="YES" id="hOT-RT-76x">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="y7E-bo-2vn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sWs-ha-j0B"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="y7E-bo-2vn"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="CXv-Kh-tUA"/>
+                    <exclude reference="hOT-RT-76x"/>
+                    <exclude reference="sWs-ha-j0B"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="y7E-bo-2vn"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="CXv-Kh-tUA"/>
+                    <include reference="hOT-RT-76x"/>
+                    <include reference="sWs-ha-j0B"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
