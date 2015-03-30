@@ -28,6 +28,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-rM-pMb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="88" width="400" height="469"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="mNN-dT-t8q" id="B07-nu-Fvg"/>
+                                    <outlet property="delegate" destination="mNN-dT-t8q" id="nLR-OS-0dX"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DDX-B6-Ud9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="44" width="400" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="mNN-dT-t8q" id="PpI-JX-DX7"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -38,6 +59,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vt1-Ke-2Gh"/>
+                                <exclude reference="7A8-rM-pMb"/>
+                                <exclude reference="DDX-B6-Ud9"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Pmc-R6-JhY"/>
@@ -48,6 +71,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vt1-Ke-2Gh"/>
+                                <include reference="7A8-rM-pMb"/>
+                                <include reference="DDX-B6-Ud9"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Pmc-R6-JhY"/>
@@ -57,10 +82,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="sYI-TU-ope"/>
+                    <connections>
+                        <outlet property="searchBar" destination="DDX-B6-Ud9" id="8aW-S6-gUW"/>
+                        <outlet property="tableView" destination="7A8-rM-pMb" id="AhT-UQ-9Fo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJD-Wb-9tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="346.5"/>
+            <point key="canvasLocation" x="249" y="346"/>
         </scene>
     </scenes>
 </document>
